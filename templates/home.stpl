@@ -1,0 +1,18 @@
+<html>
+  <head>
+    <title>Home</title>
+  </head>
+  <body>
+    <h1>Add Flight</h1>
+    <form method="POST" action="/add">
+      <input type="text" name="flight_code">
+      <input type="submit" value="add">
+    </form>
+   <h1>Flights List</h1>
+    <ol>
+    <% for (index, flight) in flights.iter().enumerate() {%>
+      <li><%= flight.airline %> <%= flight.code %> <a href="/delete/<%= index %>">delete</a></li>
+    <% } %>
+    </ol>
+  </body>
+</html>
